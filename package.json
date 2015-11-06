@@ -1,0 +1,15 @@
+{
+  "name": "gem_store_in_angular",
+  "version": "1.0.0",
+  "description": "Gem Store Made in Angular from NPM. ",
+  "main": "index.js",
+    "dependencies": {
+      "bootstrap" : "*",
+      "angular" : "*"
+    },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ammad Ahmed",
+  "license": "ISC"
+}
