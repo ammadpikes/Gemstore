@@ -11,52 +11,58 @@
   <title>Gem Store In Angular</title>
 </head>
 <body>
-  <header>
-    <nav id="header" class="navbar navbar-fixed-top">
-        <div id="header-container" class="container navbar-container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a id="brand" class="navbar-brand" href="#">Gem Store</a>
+  <div class="container">
+    <header>
+      <nav id="header" class="navbar navbar-default navbar-fixed-top">
+          <div id="header-container" class="container navbar-container">
+              <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+                  <a id="brand" class="navbar-brand" href="#"><img src="images/Expensive-64.png" height="64" width="64" alt="Store Logo" class="logo"></a>
+              </div>
+              <div id="navbar" class="collapse navbar-collapse">
+                  <ul class="nav navbar-nav">
+                      <li class="active"><a href="#">Home</a></li>
+                      <li><a href="#about">About</a></li>
+                      <li><a href="#contact">Contact</a></li>
+                  </ul>
+              </div><!-- nav-collapse Finished -->
+          </div><!-- container Closed -->
+      </nav><!-- navbar Finished -->
+    </header> <!-- Header Finished -->
+    <div class="generic-cont">
+      <div class="container">
+        <div class="jumbotran well">
+          <h1>Gem Store in AngularJS</h1>
+        </div>
+        <div ng-controller ="StoreController as store">
+          <div ng-hide="store.products.canPurchase" ng-repeat="product in store.products">
+              <h2> {{ product.name }} </h2>
+            <span class="pull-right">
+              <em><h3>{{ product.price | currency }} </h3></em></span><br>
+            <div class="gallery" ng-show="product.images.length">
+              <ul>
+                <li>
+                <img class="main-gems img img-circle img-thumbnail center-block" ng-src="{{ product.icon }}" alt="{{product.name}}">
+                </li><br>
+                <li ng-repeat = "image in product.images" class= "small-image" >
+                  <img ng-src="{{image.path}}" alt="{{product.name}}" class="img-small thumbnail pull-left">
+                </li>
+              </ul>
             </div>
-            <div id="navbar" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div><!-- /.nav-collapse -->
-        </div><!-- /.container -->
-    </nav><!-- /.navbar -->
-  </header>
-
-  <div class="generic-cont">
-    <div class="container">
-      <div class="jumbotran">
-        <h2>Gem Store in AngularJS</h2>
+            <em>{{ product.description }}</em>
+        </div> <!-- List Group -->
+      </div> <!-- Store Controller Holder -->
     </div>
-    <footer>
-      <div class="well" ng-controller ="StoreController as store">
-        <ul>
-          <li><em><strong>Created By:</strong> {{ store.c.name }} | </em></li>
-          <li><em><strong>Designation:</strong> {{ store.c.desig }} | </em></li>
-          <li><em><strong>Company:</strong>{{ store.c.company }}</em></li>
-        </ul>
-      </div>
-    </footer>
-  </div>
+  </div> <!-- Generic Container -->
 
 
 
 
-
-
-
-
-  </div>
+  </div> <!-- Main Container -->
 </body>
 </html>
